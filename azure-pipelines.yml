@@ -13,11 +13,11 @@ steps:
  - task: Npm@1
    inputs:
      command: 'install'
-     workingDir: 'SignUp-Email-verify-frontend'
+     workingDir: 'signup-email-verification-front-end'
 
  - task: Npm@1
    inputs:
      command: 'custom'
-     workingDir: 'SignUp-Email-verify-frontend'
+     workingDir: 'signup-email-verification-front-end'
      customCommand: 'run build'
  
