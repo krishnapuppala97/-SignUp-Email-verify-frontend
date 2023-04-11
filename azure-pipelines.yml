@@ -28,3 +28,12 @@ steps:
     bucketName: 'cbx-email-verify'
     sourceFolder: 'signup-email-verification-front-end/build'
     globExpressions: '**'
+   
+ - task: S3Upload@1
+   inputs:
+    awsCredentials: 'aws_cbx'
+    regionName: 'us-east-1'
+    bucketName: 'cbx.mycloudbuilders.com'
+    sourceFolder: 'signup-email-verification-front-end/build/static/js'
+    globExpressions: '**'
+    targetFolder: 'static/js'
