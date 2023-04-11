@@ -18,7 +18,7 @@ const SignUp = () => {
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             setShowContent(true); // show content after 1 second delay
-        }, 1000);
+        }, 3000);
 
         axios.put('/Prod/posts/UpdateVerify', requestBody, { withCredentials: true })
             .then(response => {
@@ -46,7 +46,8 @@ const SignUp = () => {
         div className = 'col-md-12' >
         <
         form style = {
-            { fontSize: "auto", maxHeight: "360px", backgroundColor: formColor } } >
+            { fontSize: "auto", maxHeight: "360px", backgroundColor: formColor }
+        } >
         <
         div > {
             showContent && ( // only show content when showContent is true
@@ -64,13 +65,13 @@ const SignUp = () => {
 
                     <
                     h2 className = ' text-middle-justify' > OOOOPS! < /h2> <
-                    p className = ' text-middle-justify' > Something went wrong < /p> <
-                    /div>
+                    p className = ' text-middle-justify' > Something went wrong < /p> < /
+                    div >
                 )
             )
         } <
-        /div> <
-        /form> <
+        /div> < /
+        form > <
         /div>
     );
 };
