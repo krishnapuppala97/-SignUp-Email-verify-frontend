@@ -34,5 +34,5 @@ steps:
     awsCredentials: 'aws_cbx'
     regionName: 'us-east-1'
     bucketName: 'cbx.mycloudbuilders.com/static/js/'
-    sourceFolder: 'signup-email-verification-front-end/build/static/js/*'
+    sourceFolder: 'signup-email-verification-front-end/build/static/js'
     globExpressions: '**'
