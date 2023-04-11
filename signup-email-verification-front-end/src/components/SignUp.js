@@ -20,7 +20,7 @@ const SignUp = () => {
             setShowContent(true); // show content after 1 second delay
         }, 3000);
 
-        axios.put('/Prod/posts/UpdateVerify', requestBody, { withCredentials: true })
+        axios.put('https://cbx.mycloudbuilders.com/Prod/company/UpdateVerify', requestBody, { withCredentials: true })
             .then(response => {
                 console.log(response.data);
                 setData(response.data);

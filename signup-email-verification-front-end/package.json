@@ -11,7 +11,6 @@
     "react-dom": "^18.2.0",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "https://jhex4v8axb.execute-api.us-east-1.amazonaws.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

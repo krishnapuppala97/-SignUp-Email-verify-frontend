@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+ - task: Npm@1
+   inputs:
+     command: 'install'
+     workingDir: 'signup-email-verification-front-end'
+
+ - task: Npm@1
+   inputs:
+     command: 'custom'
+     workingDir: 'signup-email-verification-front-end'
+     customCommand: 'run build'
+ 
+ - task: S3Upload@1
+   inputs:
+    awsCredentials: 'aws_cbx'
+    regionName: 'us-east-1'
+    bucketName: 'cbx-email-verify'
+    sourceFolder: 'signup-email-verification-front-end/build'
+    globExpressions: '**'
