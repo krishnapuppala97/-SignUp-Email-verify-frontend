@@ -18,7 +18,7 @@ const SignUp = () => {
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             setShowContent(true); // show content after 1 second delay
-        }, 3000);
+        }, 1500);
 
         axios.put('https://cbx.mycloudbuilders.com/Prod/company/UpdateVerify', requestBody, { withCredentials: true })
             .then(response => {
