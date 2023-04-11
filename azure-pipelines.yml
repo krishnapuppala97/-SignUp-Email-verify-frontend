@@ -6,12 +6,7 @@
 trigger:
 - master
  
-resources:
- pipelines:
- - pipeline: 
-   source: CBX-Signup-frontend
-   project: triiger-CBX-Signup-frontend-SignUp-Email-verify-frontend
-   trigger: true
+
 
 pool:
   vmImage: ubuntu-latest
