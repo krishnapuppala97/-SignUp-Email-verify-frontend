@@ -22,7 +22,7 @@ const SignUp = () => {
 
         axios.put('https://cbx.mycloudbuilders.com/Prod/company/UpdateVerify', requestBody, { withCredentials: true })
             .then(response => {
-                console.log(response.data);
+
                 setData(response.data);
                 if (response.status === 200) {
                     setFormColor('#C8E6C9'); // change form color to green if response status is 200
@@ -32,6 +32,7 @@ const SignUp = () => {
             })
             .catch(error => {
                 console.error(error);
+                console.log(response.data);
                 setData(null);
                 setFormColor('#FFCDD2'); // change form color to red if error occurs
             });
