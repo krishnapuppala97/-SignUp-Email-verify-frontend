@@ -20,14 +20,7 @@ const SignUp = () => {
             setShowContent(true); // show content after 1 second delay
         }, 1500);
 
-        axios.put('https://t8d3y2uawa.execute-api.us-east-1.amazonaws.com/Prod/posts/UpdateVerify', requestBody, {
-  headers: {
-    'x-api-key': '1VZHzEsncL6Xy0rNMPPSHS55ahXxPWE3Cmt1jiXe',
-    'Content-Type': 'application/json'
-  },
-  withCredentials: true
-})
-
+        axios.put('https://cbx.mycloudbuilders.com/Prod/company/UpdateVerify', requestBody, { withCredentials: true })
             .then(response => {
                 console.log(response.data);
                 setData(response.data);
@@ -68,9 +61,6 @@ const SignUp = () => {
       </div>
     </form>
   </div>
-
-
-
     );
 };
 
