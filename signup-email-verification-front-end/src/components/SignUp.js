@@ -20,7 +20,14 @@ const SignUp = () => {
             setShowContent(true); // show content after 1 second delay
         }, 1500);
 
-        axios.put('https://cbx.mycloudbuilders.com/Prod/company/UpdateVerify', requestBody, { withCredentials: true })
+        axios.put('https://t8d3y2uawa.execute-api.us-east-1.amazonaws.com/Prod/posts/UpdateVerify', requestBody, {
+  headers: {
+    'x-api-key': '1VZHzEsncL6Xy0rNMPPSHS55ahXxPWE3Cmt1jiXe',
+    'Content-Type': 'application/json'
+  },
+  withCredentials: true
+})
+
             .then(response => {
                 console.log(response.data);
                 setData(response.data);
@@ -42,37 +49,28 @@ const SignUp = () => {
 
 
 
-    return ( <
-        div className = 'col-md-12' >
-        <
-        form style = {
-            { fontSize: "auto", maxHeight: "360px", backgroundColor: formColor }
-        } >
-        <
-        div > {
-            showContent && ( // only show content when showContent is true
-                data ? ( <
-                    div >
-                    <
-                    h2 className = ' text-middle-justify' > Congratulations < /h2> <
-                    p className = ' text-middle-justify' > Your email is verified now, Thank you
-                    for choosing us. < /p>
+    return ( <div className='col-md-12'>
+    <form style={{ fontSize: "auto", maxHeight: "360px", backgroundColor: formColor }}>
+      <div>
+        {showContent && ( // only show content when showContent is true
+          data ? (
+            <div>
+              <h2 className='text-middle-justify'>Congratulations</h2>
+              <p className='text-middle-justify'>Your email is verified now. Thank you for choosing us.</p>
+            </div>
+          ) : (
+            <div>
+              <h2 className='text-middle-justify'>OOOOPS!</h2>
+              <p className='text-middle-justify'>Something went wrong.</p>
+            </div>
+          )
+        )}
+      </div>
+    </form>
+  </div>
 
-                    <
-                    /div>
-                ) : ( <
-                    div >
 
-                    <
-                    h2 className = ' text-middle-justify' > OOOOPS! < /h2> <
-                    p className = ' text-middle-justify' > Something went wrong < /p> < /
-                    div >
-                )
-            )
-        } <
-        /div> < /
-        form > <
-        /div>
+
     );
 };
 
